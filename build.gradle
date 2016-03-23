@@ -1,0 +1,23 @@
+buildscript {
+     repositories {
+        mavenLocal()
+    }
+}
+
+version "0.1"
+group "file.server"
+
+apply plugin: 'idea'
+apply plugin: 'java'
+
+ext {
+    gradleWrapperVersion = project.gradleWrapperVersion
+}
+
+repositories {
+    mavenLocal()
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = gradleWrapperVersion
+}
