@@ -14,6 +14,12 @@ ext {
     gradleWrapperVersion = project.gradleWrapperVersion
 }
 
+jar {
+    manifest {
+        attributes 'Main-Class': 'com.files.server.Launcher'
+    }
+}
+
 repositories {
     mavenLocal()
 }
