@@ -1,6 +1,7 @@
 package com.files.server;
 
 import java.io.File;
+import java.io.FileFilter;
 
 /**
  * Created by azyubenko on 22.03.16.
@@ -16,7 +17,12 @@ public class FilesStore {
     }
 
     public File[] listFiles() {
-        return root.listFiles();
+        return root.listFiles(new FileFilter() {
+            @Override
+            public boolean accept(File pathname) {
+                return !pathname.isDirectory();
+            }
+        });
     }
 
     public File getFile(String fileName) {
